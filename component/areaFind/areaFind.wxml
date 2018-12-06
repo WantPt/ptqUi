@@ -1,0 +1,18 @@
+<view class="af">
+	<view class="af_in af_in1">
+		<scroll-view class="af_in_in" scroll-y>
+			<view class="af_in_in_area cenFlex {{item.click?'af_in_in_area_act1':''}}" wx:for="{{preArr}}" wx:key="{{index}}" data-index="{{index}}" data-item="{{item.children}}" bindtap="preChange" style="border-left: 8rpx #fff solid;">{{item.name}}</view>
+		</scroll-view>
+	</view>
+	<view class="af_in">
+		<scroll-view class="af_in_in" scroll-y>
+			<view class="af_in_in_area cenFlex {{item.click?'af_in_in_area_act2':''}}" wx:for="{{cityArr}}" wx:key="{{index}}" data-index="{{index}}" data-item="{{item.children}}" bindtap="cityChange">{{item.name}}</view>
+		</scroll-view>
+	</view>
+	<view class="af_in">
+		<scroll-view class="af_in_in" scroll-y>
+			<view class="af_in_in_area cenFlex {{item.click?'af_in_in_area_act2':''}}" wx:for="{{areaArr}}" wx:key="{{index}}" data-index="{{index}}" data-item="{{item.children}}" bindtap="areaChange">{{item.name}}</view>
+		</scroll-view>
+	</view>
+</view>
+<view class="areafind_btn all_btn cenFlex" bindtap="changeOver">保存</view>

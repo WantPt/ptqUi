@@ -1,0 +1,23 @@
+<view class="mask" wx:if="{{show}}" bindtap="maskClick"></view>
+<view class="textSelect_box" wx:if="{{show}}">
+    <view class="textSelect_box_t bm cenFlex">{{tit}}</view>
+    <view class="textSelect_box_m" wx:if="{{!multiple}}">
+        <view class="textSelect_box_m_in" wx:for="{{textSelectArr}}" wx:key="{{index}}" data-index="{{index}}" bindtap="changeSty">
+        	<view class="icon" class="icon-srdz-danxuan{{selectPos==index?'':'1'}}" style="font-size: 36rpx;margin-right: 5rpx;color: #d6c093;"></view>
+        	<view class="text">{{item.name}}</view>
+        </view>
+    </view>
+    <view class="textSelect_box_m" wx:if="{{multiple}}">
+        <view class="textSelect_box_m_in" wx:for="{{textSelectArr}}" wx:key="{{index}}" data-index="{{index}}" bindtap="multipleChangeSty">
+        	<view class="icon" class="icon-srdz-danxuan{{selectChangeArr[index]?'':'1'}}" style="font-size: 36rpx;margin-right: 5rpx;color: #d6c093;"></view>
+        	<view class="text">{{item.name}}</view>
+        </view>
+    </view>
+    <view class="textSelect_box_input" wx:if="{{(placeholder && inputFlagShow) || (placeholder && textSelectArr.length<=1)}}">
+    	<input type="text" value="{{inputTxt}}" bindinput="inputBtn" placeholder="{{placeholder}}" maxlength="10" />
+    	<view class="textSelect_box_input_fiexd">{{inputTxt.length}}/10</view>
+    </view>
+    <view class="textSelect_box_b cenFlex">
+        <view class="all_btn textSelect_box_btn cenFlex" bindtap="ok">确定</view>
+    </view>
+</view>

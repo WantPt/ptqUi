@@ -1,0 +1,52 @@
+.cenFlex{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.af{
+	width: 100%;
+	height: 100%;
+	display: flex;
+}
+
+.af_in_in_area{
+	width: 100%;
+	height: 100rpx;
+	color: #999;
+}
+.af_in_in_area_act1{
+	background: #f9f7f4;
+	color: #333;
+	border-left: 8rpx #d6c093 solid !important;
+}
+.af_in_in_area_act2{
+	background: #f9f7f4;
+	color: #333;
+}
+.af_in1{
+	background: #fff !important;
+}
+.af_in{
+	width: 100vw;
+	background: #fcfcfc;
+}
+.af_in_in{
+	width: 100%;
+	height: 100%;
+}
+.areafind_btn{
+    height: 8vh;
+    position: relative;
+    z-index: 888;
+    bottom: 0rpx;
+    width: 100vw;
+}
+.all_btn {
+    background: #d6c093;
+    color: #fff;
+}
+
+.all_btn_f {
+    background: #ded9cd;
+    color: #fff;
+}

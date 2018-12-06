@@ -1,0 +1,247 @@
+<!-- 首页第三版横向排版 -->
+<template name="indexAll">
+    <view class="{{item.end_time<=0 || item.inventory<=0?'bootomBox_index_in1':'bootomBox_index_in'}}" data-id="{{item.goods_id}}" data-type="{{item.is_group}}" bindtap="navStore">
+        <view class="bootomBox_index_in_l">
+            <image src="{{item.goods_img}}"></image>
+        </view>
+        <view class="bootomBox_index_in_r">
+            <view class="bootomBox_index_in_r1">
+                <view class="bootomBox_index_in_r1_r">
+                    <view class="bootomBox_index_in_r1_l">{{item.type_str}}</view>
+                    <text>{{item.goods_name}}</text>
+                </view>
+            </view>
+            <view class="bootomBox_index_in_r3">
+                <view class="bootomBox_index_in_r3_1">
+                    <view class="bootomBox_index_in_r3_1_l a_fz cenFlex" style="min-width: 150rpx">{{item.price_str}}:¥{{item.bottom_price}}
+                    </view>
+                    <view class="bootomBox_index_in_r3_1_r cenFlex">
+                        ¥
+                        <text class="onFontNow" style="max-width: 80rpx;display: block;">{{item.goods_price}}</text>
+                    </view>
+                </view>
+                <view class="bootomBox_index_in_r3_2 b_fz" wx:if="{{item.end_time>0 && item.inventory>0}}">
+				    <view class="a">
+				        {{item.type_a}}
+				    </view>
+				    <view class="b">
+				        <image src="https://www.pintuanqu.cn/Public/WeChatApps/images/wRight.png"></image>
+				    </view>
+				</view>
+                <view class="bootomBox_index_in_r3_21" wx:if="{{item.end_time<=0 || item.inventory<=0}}">
+                    <image src="https://www.pintuanqu.cn/Public/WeChatApps/images/{{item.end_time<0?'sale_end_text.png':'sale_over_text.png'}}"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+</template>
+<!-- 首页第三版横向排版附近门店 -->
+<template name="indexAllNear">
+    <view class="bootomBox_index_in" data-id="{{item.goods_id}}" data-type="{{item.is_group}}" bindtap="navStore">
+        <view class="bootomBox_index_in_l">
+            <image src="{{item.goods_img}}"></image>
+        </view>
+        <view class="bootomBox_index_in_r">
+            <view class="bootomBox_index_in_r1">
+                <view class="bootomBox_index_in_r1_r">
+                    <view class="bootomBox_index_in_r1_l">{{item.type_str}}</view>
+                    <text>{{item.goods_name}}</text>
+                </view>
+            </view>
+            <view class="bootomBox_index_in_r3">
+                <view class="bootomBox_index_in_r3_1">
+                    <view class="bootomBox_index_in_r3_1_l a_fz">
+                        最低价:¥{{item.bottom_price}}
+                    </view>
+                    <view class="bootomBox_index_in_r3_1_r">
+                        原价:¥{{item.goods_price}}
+                    </view>
+                </view>
+                <view class="bootomBox_index_in_r3_2_j">
+                    距离{{item.edistance}}千米
+                </view>
+            </view>
+        </view>
+    </view>
+</template>
+<!-- 收藏模板 -->
+<template name="collection">
+    <view class="activeBox" bindlongtap="longTapBtn" data-shopid="{{item.store_id}}" data-goodsid="{{itme.goods_id}}" data-typeid="{{itme.type}}">
+        <view class="imageBox_act">
+            <image src="{{item.goodsImg}}"></image>
+        </view>
+        <view class="prolis_right">
+            <view class="pro_txt">
+                <view class="active_title_l">{{item.goodsName}}</view>
+                <view class="actveBox_header">{{item.goodsDes}}</view>
+                <view class="price">
+                    <text class="symbol_act_l">¥</text>
+                    <text class="money_act_l">{{item.goodsPrice}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="delBox_foot" wx:if="{{item.delBtnSty}}" data-goodsid="{{item.goods_id}}" data-storeid="{{item.store_id}}" bindtap="delBtn">
+            删除
+        </view>
+    </view>
+</template>
+<!-- 收藏模板 -->
+<template name="footprintArr">
+    <view class="activeBox" bindlongtap="longTapBtn" bindtap="activeBtnNav" data-shopid="{{item.store_id}}" data-goodsid="{{itme.goods_id}}" data-typeid="{{itme.type}}">
+        <view class="imageBox_act">
+            <image src="{{item.goodsImg}}"></image>
+        </view>
+        <view class="prolis_right">
+            <view class="pro_txt">
+                <view class="active_title_l">{{item.goodsName}}</view>
+                <view class="actveBox_header">{{item.goodsDes}}</view>
+                <view class="price">
+                    <text class="symbol_act_l">¥</text>
+                    <text class="money_act_l">{{item.goodsPrice}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="delBox_foot b_fz" wx:if="{{item.delBtnSty}}" data-goodsid="{{item.goods_id}}" data-storeid="{{item.store_id}}" bindtap="delBtn">
+            删除
+        </view>
+    </view>
+</template>
+<!-- 足迹模板 -->
+<template name="footprintBox">
+    <view class="activeBox" bindlongtap="longTapBtn">
+        <view class="imageBox_act" bindtap="goodsBtn" data-shopid="{{item.store_id}}" data-goodsid="{{item.goods_id}}" data-typeid="{{item.is_group}}">
+            <image src="{{item.img}}"></image>
+        </view>
+        <view class="prolis_right" bindtap="goodsBtn" data-shopid="{{item.store_id}}" data-goodsid="{{item.goods_id}}" data-typeid="{{item.is_group}}">
+            <view class="pro_txt">
+                <view class="active_title_l">{{item.title}}</view>
+                <view class="actveBox_header">{{item.intro}}</view>
+                <view class="price">
+                    <text class="symbol_act_l">¥</text>
+                    <text class="money_act_l">{{item.money}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="delBox_foot b_fz" wx:if="{{!item.delBtnSty}}" data-goodsid="{{item.goods_id}}" data-storeid="{{item.store_id}}" bindtap="delBtn">
+            删除
+        </view>
+    </view>
+</template>
+<!-- 订单列表模板 -->
+<template name="orderTem">
+    <view class="newOrder_in_box" bindtap="orderIntroIn" data-id="{{item.order_id}}">
+        <view class="orderlis_left">
+            <image src="{{item.titleImg}}" />
+        </view>
+        <view class="orderlis_right">
+            <view class="orderlis_right_box1">
+                <text class="or_r">{{item.title}}</text>
+                <text class="fl_right">{{item.state}}</text>
+            </view>
+            <view class="numTxt_sty">数量：{{item.num}}</view>
+            <view class="numTxt_sty">总价：¥{{item.total}}</view>
+        </view>
+        <view class="orderlis_btn">
+            <text>{{item.stateTxt}}</text>
+        </view>
+    </view>
+</template>
+<!-- 我开发的商家模板 -->
+<template name="devemerBox">
+    <view class="devemerBox_all" bindtap="businIntro" data-id="{{item.store_id}}">
+        <view class="devemerBox_img">
+            <image src="{{item.storelogo}}" />
+        </view>
+        <view class="devemerBox_right">
+            <view>
+                <text class="or_r">{{item.storename}}</text>
+            </view>
+            <view class="numTxt_sty">
+                <text style="margin-right: 20rpx;">{{item.name}}</text>
+                {{item.telephone}}
+            </view>
+            <view class="numTxt_sty">{{item.address}}</view>
+        </view>
+        <view class="r_ico_img">
+            <image src="https://pintuanqu.cn/Public/Miniapps/images/yico.png"></image>
+        </view>
+    </view>
+</template>
+<template name="allOrderTem">
+    <view class="newOrder_in_box" bindtap="orderListBtn" data-id="{{item.id}}">
+        <view class="orderlis_left cenFlex">
+            <image src="{{item.goods_img}}" />
+        </view>
+        <view class="orderlis_right">
+            <view class="beteew">
+                <text class="or_r">
+                    <text class="beteew_in_str">{{item.is_group==1?'团购返现':item.is_group==3?'多人拼团':item.is_group==4?'限时优惠':'位置类型'}}</text>{{item.goods_name}}</text>
+                <text class="fl_right" wx:if="{{item.is_group!=3}}">{{item.status_str}}</text>
+                <text class="fl_right" wx:if="{{item.is_group==3}}">{{item.group_str}}</text>
+<!--                 <text class="fl_right">{{item.group_str}}</text> -->
+            </view>
+            <view class="numTxt_sty">
+                <view>数量：{{item.nums}}</view>
+                <view class="numTxt_sty_r">总价：¥{{item.total_price}}</view>
+            </view>
+            <view class="numTxt_sty">买家：{{item.wx_name}}
+            </view>
+            <view class="numTxt_sty">时间：{{item.add_time}}
+            </view>
+        </view>
+        <view class="orderlis_btn">
+            <text>查看</text>
+        </view>
+    </view>
+</template>
+<!-- 六位密码模版 -->
+<template name="passBox">
+    <view class="payPass_box1" wx:if="{{passObj.allinputF1}}">
+        <view class="qiueBtn" bindtap="hideBox">关闭</view>
+        <view class="payPass_box_t">请输入您的支付密码</view>
+        <view class="payPass_box_m">
+            <view class="payPass_box_m_in" bindtap="focusInput">
+                <view class="payPass_box_m_in_in" wx:for="{{6}}" wx:key="{{index}}">
+                    <input data-index="{{index}}" bindinput="allInputBtn" type="number" confirm-hold="{{true}}" value="{{passObj.inputArr[index]}}" disabled="{{true}}" maxlength="1" password="{{true}}"/>
+                </view>
+            </view>
+            <view class="indexTopInput">
+                <input value="{{passObj.inputStr}}" focus="{{passObj.allinputF1}}" maxlength="6" type="number" bindinput="passInput"/>
+            </view>
+        </view>
+    </view>
+</template>
+<!-- 下方的加在更多模板 -->
+<template name="moreData">
+    <view class="bottomtx" wx:if="{{(dataBottom.flage || dataBottom.list.length<8) && dataBottom.frist && dataBottom.list[0]}}">已经没有更多了~</view>
+    <view class="bottomtx" wx:if="{{!dataBottom.flage && dataBottom.list.length>=8 && dataBottom.frist && dataBottom.list[0]}}"><image src="https://www.pintuanqu.cn/Public/WeChatApps/images/onBloading.png"></image>正在加载,请稍候！</view>
+</template>
+<!-- 订单按钮模板 -->
+<template name="orderShareBtn">
+    <view class="del_btn_box1"  data-id="{{item.goods_id}}" data-type="{{item.is_group}}" data-index="{{item.group_id}}" bindtap="goodsNav">分享</view>
+    <view class="del_btn_box1" bindtap="goodsIdBtn" data-id="{{item.order_id}}" data-type="{{item.type}}">订单详情</view>
+</template>
+<template name="nullData">
+    <view class="nD_i">
+        <view class="nD_i_in cenFlex">
+            <view class="nD_i_in_t">
+                <view class="nD_i_in_t_img cenFlex">
+                    <image src="../../../../images/mx_none.png"></image>
+                </view>
+                <view class="nD_i_in_t_txt cenFlex">{{nullData.txt}}</view>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="nullData1">
+    <view class="nD_i">
+        <view class="nD_i_in cenFlex">
+            <view class="nD_i_in_t">
+                <view class="nD_i_in_t_img cenFlex">
+                    <image src="{{img}}" mode="widthFix"></image>
+                </view>
+                <view class="nD_i_in_t_txt cenFlex">{{txt}}</view>
+            </view>
+        </view>
+    </view>
+</template>

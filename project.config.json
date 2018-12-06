@@ -1,0 +1,67 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.9.9",
+	"appid": "wxdc50df920a64dc54",
+	"projectname": "小程序基础框架",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": 0,
+					"name": "首页长按识别二维码进入",
+					"pathName": "pages/loading/loading",
+					"query": "",
+					"scene": "1023"
+				},
+				{
+					"id": -1,
+					"name": "代理商商家页面",
+					"pathName": "pages/my/areashopNew/areashop",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "余额明细",
+					"pathName": "pages/my/myBalanceNew/detailMon/detailMon",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "服务商收益",
+					"pathName": "pages/my/areashop/store/store",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "服务商收益",
+					"pathName": "pages/my/areashop/store/store",
+					"query": ""
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,76 @@
+view{
+	box-sizing: border-box;
+}
+.icon-srdz-danxuan:before { content: "\e6d1"; }
+
+.icon-srdz-danxuan1:before { content: "\e671"; }
+.cenFlex{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.mask{
+	position: fixed;
+	top: 0rpx;
+	left: 0rpx;
+	width: 100vw;
+	height: 100vh;
+	z-index: 100;
+	background-color: #000;
+	opacity: .4;
+}
+.textSelect_box{
+	width: 92vw;
+	border-radius: 5rpx;
+	background-color: #fff;
+	position: fixed;
+	left: 4vw;
+	z-index: 120;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.textSelect_box_t{
+	padding:30rpx;
+	text-align: center;
+	border-bottom: 2rpx #f2f2f2 solid;
+}
+.textSelect_box_m{
+	padding: 20rpx 30rpx;
+	flex-wrap: wrap;
+	padding-bottom: 0rpx;
+	display: flex;
+}
+.textSelect_box_m_in{
+	width: 50%;
+	height: 50rpx;
+	display: flex;
+	align-items: center;
+	margin-bottom: 20rpx;
+}
+.textSelect_box_input{
+	padding:10rpx 20rpx;
+	position: relative;
+}
+.textSelect_box_input input{
+	background-color: #f9f9f9;
+	padding: 5rpx 30rpx;
+	box-sizing: border-box; 
+}
+.textSelect_box_input_fiexd{
+	position: absolute;
+	right: 40rpx;
+	top:20rpx;
+	z-index: 100;
+	color: #999;
+}
+.all_btn {
+    background: #d6c093;
+    color: #fff;
+}
+.textSelect_box_b{
+	padding: 20rpx 30rpx;
+}
+.textSelect_box_btn{
+	height: 88rpx;
+	width: 100%;
+}

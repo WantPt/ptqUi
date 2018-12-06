@@ -1,0 +1,7 @@
+{
+	"navigationBarTitleText": "基础框架模板",
+	"usingComponents": {
+      "compage": "/vwx/component/template/",
+      "vwx-modal": "/component/modal/modal"
+    }
+}

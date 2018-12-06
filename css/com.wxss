@@ -1,0 +1,163 @@
+.weui-cells {
+   color: #607d8b;
+   font-size: 14px;
+}
+
+.h1 {
+   font-size: 26px;
+   line-height: 1.6;
+}
+
+.h2 {
+   font-size: 22px;
+   line-height: 1.6;
+}
+
+.h3 {
+   font-size: 18px;
+   line-height: 1.6;
+}
+
+.h4 {
+   font-size: 16px;
+   line-height: 1.6;
+}
+
+.h5 {
+   font-size: 14px;
+   line-height: 1.6;
+}
+
+/*标签  */
+
+.tag-yh {
+   display: inline-block;
+   padding: 6rpx 0rpx;
+   border-top: 2rpx #ffa625 dashed;
+   border-bottom: 2rpx #ffa625 dashed;
+   border-left: 2rpx #ffa625 solid;
+   border-right: 2rpx #ffa625 solid;
+   border-radius: 8rpx;
+}
+
+.tag-yh text {
+   padding: 0rpx 20rpx;
+   color: #fff;
+   font-size: 12px;
+   background: #ffa625;
+}
+
+.type-box {
+   padding: 10rpx 0;
+   border-top-style: dashed;
+   border-bottom-style: dashed;
+   border-left-style: solid;
+   border-right-style: solid;
+   border-width: 2rpx;
+   border-color: #eee;
+   border-radius: 10rpx;
+   height: 100%;
+}
+
+.type-box text {
+   padding: 0 20rpx;
+   background-color: #eee;
+   text-align: center;
+   color: #fff;
+}
+
+.yyy {
+   font-size: 13px;
+}
+
+/*滚动图片  */
+
+.headerImgBox {
+   width: 100%;
+   height: 460rpx;
+   position: relative;
+}
+
+.headerImgBox swiper-item {
+   width: 100%;
+   height: 100%;
+   overflow: hidden;
+}
+
+.headerImgBox swiper-item image {
+   width: 100%;
+}
+
+/*类型切换菜单  */
+
+.weui-navbar {
+   border: none;
+   position: relative;
+   background-color: #fff;
+}
+
+.weui-navbar__item {
+   padding: 0 0 10px 0;
+   height: 80rpx;
+   position: relative;
+}
+
+.weui-navbar__title {
+   line-height: 80rpx;
+}
+
+.weui-navbar__item.weui-bar__item_on {
+   color: #e60012;
+}
+
+.weui-navbar__item.weui-bar__item_on::after {
+   content: '';
+   position: absolute;
+   width: 100%;
+   height: 1;
+   color: #e5e5e5;
+   -webkit-transform-origin: 0 0;
+   transform-origin: 0 0;
+   -webkit-transform: scale(0.5);
+   transform: scale(0.5);
+   z-index: 100;
+   bottom: -2px;
+   left: 25%;
+   border-bottom: 4px solid #e60012;
+}
+
+/*间隔  */
+
+.space-w10, .space-h10, .space-w30, .space-h30, .space-h60, .space-w60,
+.space-h120, .space-w120 {
+   display: inline-block;
+   width: 10px;
+}
+
+.space-h10 {
+   height: 10px;
+}
+
+.space-w30 {
+   width: 30px;
+}
+
+.space-h30 {
+   height: 30px;
+}
+
+.space-w60 {
+   width: 60px;
+}
+
+.space-h60 {
+   height: 60px;
+}
+
+.space-w120 {
+   width: 120px;
+}
+
+.space-h120 {
+   height: 120px;
+}

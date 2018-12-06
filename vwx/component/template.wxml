@@ -1,0 +1,9 @@
+<!--component/template.wxml-->
+<view class="{{mask?'conment':'wx_main'}}" wx:if="show" style="bottom: {{statusBarHeight}}rpx;padding-top: {{statusBarHeight}}rpx;">
+   <slot></slot>
+   <view class="maskBox" wx:if="{{mask}}" catchtap="{{mask?'hideMask':''}}"></view>
+   <view class='wx_toast' wx:if="{{toastShow}}">
+      <view class='contxt'>{{toastTxt}}</view>
+   </view>
+</view>
+<vwx-modal id="modal"></vwx-modal>

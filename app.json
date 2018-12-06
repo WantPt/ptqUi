@@ -1,0 +1,13 @@
+{
+  "pages": [
+    "pages/index/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#393a3f",
+    "navigationBarTitleText": "基础框架模板",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#f3f3f3"
+  },
+  "debug": false
+}

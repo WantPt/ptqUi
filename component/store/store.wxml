@@ -1,0 +1,12 @@
+<scroll-view class="store" scroll-y>
+	<view class="store_in" wx:for="{{storeArr}}" wx:key="{{index}}" bindtap="clickSlect" data-index="{{index}}">
+		<view class="store_in_l">
+			<view class="store_in_l_1">{{item.shopName}}</view>
+			<view class="store_in_l_2">{{item.provinceName}}-{{item.cityName}}-{{item.areaName}}{{item.address}}</view>
+		</view>
+		<view class="store_in_r">
+			<icon class="icon-srdz-dagouwuquan" wx:if="{{storeSty == index}}" style="font-size: 40rpx;"></icon>
+		</view>
+	</view>
+</scroll-view>
+<view class="store_btn all_btn cenFlex" bindtap="changeOver">保存</view>
