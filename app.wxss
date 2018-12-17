@@ -1,365 +1,148 @@
 @import "/css/icon.wxss";
-.a_fz{
-    color: #ff534c !important;
+.fc {
+    color: #E02E24 !important;
 }
-.b_fz{
-    background: #ff534c !important;
+.bs{
+    box-shadow: 0rpx 0rpx 8rpx rgba(191,185,173,0.40);
 }
-view{
-    margin:0rpx;
+.bc {
+    background: #E02E24 !important;
 }
-page{
-	background: #f5f5f5;
+.pc{
+    color:#E02E24;
+    font-weight: 600;
+}
+.bm{
+    border-bottom: 2rpx #F1F2F2 solid;
+}
+view {
+    margin: 0rpx;
+    box-sizing: border-box;
+}
+
+page {
+    background: #F4F4F4;
     overflow-x: hidden;
     width: 100%;
-    max-width:750rpx;
+    max-width: 750rpx;
     color: #333;
     font-size: 28rpx;
 }
-.index_all_box{
-    overflow-x: hidden;
-    width:100%;
-    /*height: 100%;*/
-}
-.page-body {
-  overflow-x: hidden;
-}
-input{
-	padding: 0;
-	margin:0;
-}
-.fix_btn{
-	position: fixed;
-    width: 95%;
-    text-align: center;
-    bottom: 20rpx;
-    left: 2.5%;
-    height: 80rpx;
-    z-index: 99;
-    background: #f2f2f2;
-}
-.fix_btn text{
-	display: block;
-    background: #f39800;
-    color: #fff;
-    height: 100%;
-    line-height: 80rpx;
-    font-size: 28rpx;
-    border-radius: 10rpx;
-    box-shadow: 0 4rpx 8rpx #aaa;
-}
-button{
-    position:relative;
-    display:block;
-    margin:0;
+
+input {
     padding: 0;
-    box-sizing:box;
-    font-size:28rpx;
-    text-align:center;
-    text-decoration:none;
-    line-height:100rpx;
-    border-radius:0px;
-    -webkit-tap-highlight-color:transparent;
-    overflow:hidden;
-    color:#000000;
-    background-color:transparent;
-}
-.aaF{
-  color: #cccccc;
-  font-weight: 400;
-}
-button::after {
-    content:" ";
-    width:100%;
-    height:100%;
-    position:absolute;
-    top:0;
-    left:0;
-    border:0px solid rgba(0, 0, 0, 0.2);
-    -webkit-transform:scale(0);
-    transform:scale(0);
-    -webkit-transform-origin:0 0;
-    transform-origin:0 0;
-    box-sizing:border-box;
-    border-radius:0px;
-}
-.tabBarBox{
+    margin: 0;
     width: 100%;
-    height: 120rpx;
-    position: fixed;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    border-top: 1rpx #b5b5b5 solid;
-    background: #fff;
-    z-index: 999;
-    bottom: 0rpx;
+    height: 100%;
 }
-.tabBarBox .tabBarBox_in_box{
-    width: 80rpx;
-    height: 100rpx;
-    display: flex;
-    justify-content: center;
-    -ms-align-items: center;
-    align-items: center;
-    flex-wrap: wrap;
-}
-.tabBarBox .tabBarBox_in_box image{
-    width: 60rpx;
-    height: 60rpx;
-}
-.tabBarBox .tabBarBox_in_box .tabBarBox_in_boxTxt{
-    text-align: center;
+
+image {
     width: 100%;
+    height: 100%;
+    display:block;
+}
+
+button {
+    position: relative;
+    display: block;
+    margin: 0;
+    padding: 0;
+    box-sizing: box;
     font-size: 28rpx;
-}
-.tabBarBox .tabBarBox_in_box .tabBarBox_in_boxTxt1{
-    color: #05c2ac;
     text-align: center;
-    width: 100%;
-    font-size: 28rpx;
-}
-.txyu1{
-    width: 100%;
-    height: 700rpx;
-    background: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-decoration: none;
+    line-height: 100rpx;
+    border-radius: 0px;
+    -webkit-tap-highlight-color: transparent;
     overflow: hidden;
-    padding-bottom: 400rpx;
-}
-.txyu1 .txyuMiddleBox{
-    width: 400rpx;
-    height: 450rpx;
-    text-align: center;
-
-}
-.txyu1 .txyuMiddleBox .imgBox{
-    width: 100%;
-}
-.txyu1 .txyuMiddleBox .imgBox image{
-    width: 100%;
-}
-.txyu1 .txyuMiddleBox .textBox{
-    font-size: 24rpx;
-    color: #999;
+    color: #000000;
+    background-color: transparent;
 }
 
-/*物品抖动事件*/
-.bottomtx{
+button::after {
+    content: " ";
     width: 100%;
-    height: 60rpx;
-    line-height: 60rpx;
-    color: #999;
-    text-align: center;
-    font-size: 24rpx;
-    background: #fff;  
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 0px solid rgba(0, 0, 0, 0.2);
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    box-sizing: border-box;
+    border-radius: 0px;
 }
-.bottomtx image{
-    width: 40rpx;
-    height: 40rpx;
-    margin-right: 10rpx;
-    animation:loadingIco .5s linear infinite;
-}
-@keyframes loadingIco
-{
-    from {transform: rotate(0deg);}
-    to {transform: rotate(360deg);}
-}
-.twoFontNow{
+
+.twoFontNow {
     display: -webkit-box;
     word-break: break-all;
     text-overflow: ellipsis;
     overflow: hidden;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp:2;
+    -webkit-line-clamp: 2;
 }
-.onFontNow{
-    overflow:hidden; 
-    text-overflow:ellipsis;
-    white-space:nowrap;
+
+.onFontNow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
+
+
 /*通用单选提示蒙版*/
-.allmenban{
-    width: 100%;
-    height: 100%;
-    opacity: .8;
-    position: fixed;
-    top: 0rpx;
-    left:0rpx;
-    z-index: 8888;
-    background: #000;
-    overflow: hidden;
-}
-.allPrompt{
-    width: 80%;
-    background: #fff;
-    left:50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-    color: #333;
-    text-align: center;
-    line-height: 40rpx;
-    font-size: 34rpx;
-    position: fixed;
-    z-index: 9999;
-    border-radius: 5rpx;
-}
-.allPrompt .allPrompt_t{
-    padding: 20rpx;
-    min-height: 100rpx;
-    font-size: 28rpx;
-}
-.allPrompt .allPrompt_b{
-    width: 100%;
-    height: 80rpx;
-    text-align: center;
-    line-height: 80rpx;
-    border-top: 2rpx #eee solid;
-    color: #3CC51F;
-}
-.allPrompt .allPrompt_h{
-    width: 100%;
-    height: 80rpx;
-    text-align: center;
-    line-height: 80rpx;
-    border-bottom: 2rpx #eee solid;
-}
-.payMethod .changeBox{
-    width: 35rpx;
-    height: 35rpx;
-    margin-right: 15rpx;
-}
-.payMethod .changeBox image{
-    width: 100%;
-    height: 100%;
-}
-.okNext{
-    width: 92%;
-    height: 80rpx;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    background: #05c1b0;
-    font-size: 24rpx;
-    margin: 20rpx auto;
-}
-.okNext_bTxt{
-    font-size: 24rpx;
-    width: 100%;
-    text-align: center;
-}
-.myfans_t_r{
-    display: flex;
-    align-items: center;
-    height: 92%;
-}
-.myfans_t_r_in{
-    width: 70rpx;
-    height: 70rpx;
-    min-width: 30rpx;
-    display: flex;
-    margin-right: -10rpx;
-    justify-content: center;
-    align-items: center;
-    font-size: 24rpx;
-}
-.myfans_t_r_in_input{
-    margin-left: 20rpx;
-    background: #fff;
-    border-radius: 20rpx;
-    transition: .2s linear;
-}
-.myfans_t_r_in_input input{
-    width: 100%;
-    padding-left: 15rpx;
-}
-.myfans_t_r_in image{
-    width: 50%;
-    height: 50%;
-}
-.myfans_t{
-    height: 40px;
-    overflow: hidden;
-    padding: 0rpx 20rpx;
-    line-height: 40px;
-    background: #f0eff4;
-    font-size: 26rpx;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.myfans_t_r_btn{
-    padding:0rpx 28rpx;
-    background: #ffab62;
-    border-radius: 5rpx;
-    color: #fff;
-    font-size: 24rpx;
-    height: 55rpx;  
-    max-height: 55rpx;
+
+.cenFlex {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.cenFlex{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-switch{
+
+switch {
     transform: scale(.6);
 }
-.allPrompt_foot{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 80rpx;
-    border-top: 2rpx #f5f5f5 solid;
-}
-.allPrompt_foot_in1{
-    width: 100%;
-    color: #05c2ac;
-}
-.allPrompt_foot_in2{
-    width: 100%;
-    border-right: 2rpx #f5f5f5 solid;
-}
-.allPrompt_t_in{
-    text-align: left;
-    line-height: 50rpx;
-    color: #666;
-}
-.allPrompt_t_in1{
-    font-size: 22rpx;
-    color: #05c2ac;
-    margin: 20rpx auto;
-}
-.allPrompt_t_in1_img{
-    width: 30rpx;
-    height: 30rpx;
-    margin-right: 10rpx;
-}
-.allPrompt_t_in1_img image{
-    width: 100%;
-    height: 100%;
-}
-checkbox .wx-checkbox-input{
+
+checkbox .wx-checkbox-input {
     width: 24rpx;
     height: 24rpx;
     background: #fff;
 }
-.conment{
-    width: 100%;
-    height: 500px;
+
+.conment {
+    width: 100vw;
+    height: 100vh;
     overflow: hidden;
 }
-.sbFlex{
+
+.sbFlex {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+
+/*以下为项目新加样式*/
+
+.all_btn {
+    background: #d6c093;
+    color: #fff;
+}
+
+.all_btn_f {
+    background: #ded9cd;
+    color: #fff;
+}
+.all_btn_fiexd{
+    position: absolute;
+    width: 100vw;
+    height: 100rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: -2rpx;
+}
+.input_plo {
+    color: #BFB9AD;
+    font-size: 28rpx;
 }

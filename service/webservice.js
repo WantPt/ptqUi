@@ -4,51 +4,49 @@ const home = require('home.js');
 const agentservice = require('agentservice.js');
 const A = require('../vwx/uset.js');
 module.exports = {
-    ...home,
     ...agentservice,
-    getTData: (_url) => {
+    getTData: (_url, josn) => {
         return new Promise((resolve, reject) => {
             if (typeof _url == 'string') {
-                _url = "/WeChatAppsCs/" + _url;
+                _url = _url;
             } else {
-                _url.url = "/WeChatAppsCs/" + _url.url;
+                _url.url = _url.url;
             }
-            A.RS(_url).then(data => {
-                wx.hideLoading();
+            // 默认参数设置
+            wx.showLoading({
+                title: '请求中...',
+            })
+            A.RSG(_url, josn).then(data => {
+                setTimeout(()=>{
+                    wx.hideLoading();
+                },500)
                 wx.stopPullDownRefresh();
-                if (!data.status && data.status != 0) {
-                    A.showTipModal('网络错误,请重新登陆!', () => {
-                        wx.reLaunch({
-                            url: '/pages/loading/loading'
-                        })
-                    })
-                    return
-                } else if (data.status == 233) {
-                    A.showTipModal(data.info, () => {
-                        wx.reLaunch({
-                            url: '/pages/loading/identChang/identChang'
-                        })
-                    })
-                    return
-                } else if (data.status == 333) {
-                    A.showTipModal('您的代理商身份已被禁用', () => {
-                        wx.reLaunch({
-                            url: '/pages/loading/identChang/identChang'
-                        })
-                    })
-                    return
-                } else if (data.status == 12) {
-                    A.showTipModal(data.info, () => {
-                        wx.reLaunch({
-                            url: '/pages/loading/loading'
-                        })
-                    })
-                    return
-                }
                 resolve(data);
             }, err => {
                 reject(err);
             });
         })
-    }
+    },
+    postTData: (_url, josn) => {
+        return new Promise((resolve, reject) => {
+            if (typeof _url == 'string') {
+                _url = _url;
+            } else {
+                _url.url = _url.url;
+            }
+            // 默认参数设置
+            wx.showLoading({
+                title: '请求中...',
+            })
+            A.RS(_url, josn).then(data => {
+                setTimeout(()=>{
+                    wx.hideLoading();
+                },500)
+                wx.stopPullDownRefresh();
+                resolve(data);
+            }, err => {
+                reject(err);
+            });
+        })
+    },
 }
