@@ -6,7 +6,7 @@ import { DF, STATE } from '/config/define.js'
 import store from '/udb/store/index.js'
 import DB from '/udb/DB/index.js'
 import webservice from '/service/webservice.js'
-import utils from '/utils/util.js'
+// import utils from '/utils/util.js'
 // 注册App，vwx初始化数据
 App(vwx({
     config,
@@ -16,7 +16,6 @@ App(vwx({
     DB,
     DF,
     STATE,
-    utils,
     onLaunch: function() {
         // let unionid = wx.getStorageSync('thisCode');
         // if (unionid) {

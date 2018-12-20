@@ -1,7 +1,9 @@
 import simple from './common/simple.js';
+import utils from '../utils/util.js'
 var A = null;
 // 输出扩展对象
 const _exp = {
+   utils,
    set A(_val) {
       A = _val;
    },
