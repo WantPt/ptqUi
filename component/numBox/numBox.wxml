@@ -1,0 +1,11 @@
+<view class="numBox cenFlex">
+	<view class="numBox_even" data-index="1" bindtap="countNumBtn">
+		<image src="{{imgUrl}}icon_3.png"></image>
+	</view>
+	<view class="numBox_num cenFlex">
+		<input type="text" placeholder-class="input_plo" maxlength="2" value="{{num}}" type="number" bindblur="inputBlurBtn"/>
+	</view>
+	<view class="numBox_even" data-index="2" bindtap="countNumBtn">
+		<image src="{{imgUrl}}icon_4.png"></image>
+	</view>
+</view>

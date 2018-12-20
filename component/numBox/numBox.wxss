@@ -1,0 +1,16 @@
+@import "/css/base.wxss";
+.numBox_even{
+	width: 46rpx;
+	height: 46rpx;
+	min-width: 46rpx;
+}
+.numBox_num{
+	width: 50rpx;
+	height: 46rpx;
+	border:2rpx #EAEAEA solid;
+	border-radius: 5rpx;
+	margin: 0rpx 10rpx;
+}
+.numBox_num input{
+	text-align: center;
+}

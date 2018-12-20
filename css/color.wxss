@@ -1,29 +1,43 @@
-.tcr_3 {
-   color: #90a4ae;
+.c333{
+    color: #333;
 }
-.tcr_4 {
-   color: #78909c;
+.c666{
+    color: #666;
 }
-.tcr_5 {
-   color: #607d8b;
+.c999{
+    color: #999;
 }
-.tcr_6 {
-   color: #546e7a;
+.fc {
+    color: #E02E24 !important;
 }
-.tcr_7 {
-   color: #455a64;
+.bs{
+    box-shadow: 0rpx 0rpx 8rpx rgba(191,185,173,0.40);
+    border-radius: 6rpx;
 }
-.tcr_8 {
-   color: #37474f;
+.bc {
+    background: #E8E8E8 !important;
 }
-.tcr_o7 {
-   color: #f57c00;
+.pc{
+    color:#E02E24;
+    font-weight: 600;
 }
-.tcr_a2 {
-   color: #fff59d;
+.bm{
+    border-bottom: 2rpx #F1F2F2 solid;
 }
-.tcr_a3 {
-   color: #fff176;
+.green{
+   color: #21CA4C;
+}
+.blue{
+   color: #185AE6;
+}
+.orange{
+   color: #E98512;
+}
+.reddish{
+   color: #E95A27;
+}
+.red{
+   color: #E02E24;
 }
 .loading{
    margin: auto;
