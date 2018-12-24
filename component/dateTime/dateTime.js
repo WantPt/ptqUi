@@ -21,17 +21,19 @@ Component({
     data: {
         dateTimeArray1: null,
         dateTime1: null,
-        fmtArr: {}
+        fmtArr: {},
+        monIndex: 2,
     },
     attached() {
         var crtTime = new Date();
         let startYear = this.data.startYear || crtTime.getFullYear();
-        let endYear = this.data.endYear || crtTime.getFullYear()+50;
+        let endYear = this.data.endYear || crtTime.getFullYear() + 50;
         var obj = dateTimePicker.dateTimePicker(startYear, endYear);
         // 精确到分的处理，将数组的秒去掉
         var lastArray = [];
         var lastTime = [];
         let fmt = this.data.fmt;
+        let monIndex = this.data.monIndex;
         var fmtArr = [
             { reg: "M+", val: obj.dateTimeArray[1][obj.dateTime[1]] }, //月份   
             { reg: "d+", val: obj.dateTimeArray[2][obj.dateTime[2]] }, //日   
@@ -46,31 +48,38 @@ Component({
         }
         fmtArr.find((item, i) => {
             if (new RegExp("(" + item.reg + ")").test(fmt)) {
+                if (~item.reg.indexOf('d')) {
+                    monIndex = i;
+                }
                 fmtArrNew[item.reg] = item.val;
-                lastArray.push(obj.dateTimeArray[i+1]);
-                lastTime.push(obj.dateTime[i+1]);
+                lastArray.push(obj.dateTimeArray[i + 1]);
+                lastTime.push(obj.dateTime[i + 1]);
             }
         });
         this.setData({
             dateTimeArray: lastArray,
             dateTime: lastTime,
-            fmtArr:fmtArrNew,
-            endYear,startYear
+            fmtArr: fmtArrNew,
+            endYear,
+            startYear,
+            monIndex
         });
     },
     methods: {
         changeDateTime(e) {
             var arr = e.detail.value,
-                dateArr = this.data.dateTimeArray;
+                dateTimeArray = this.data.dateTimeArray;
             let fmt = this.data.fmt;
             var fmtArr = this.data.fmtArr;
-            let count = 0;
-            for(let i in fmtArr){
+            let count = /(y+)/.test(fmt)?0:-1;
+            console.log(fmtArr)
+            for (let i in fmtArr) {
                 count++;
-                fmtArr[i] = dateArr[count][arr[count]]
+                console.log(dateTimeArray[count][arr[count]])
+                fmtArr[i] = dateTimeArray[count][arr[count]]
             }
             if (/(y+)/.test(fmt))
-                fmt = fmt.replace(RegExp.$1, (dateArr[0][arr[0]] + "").substr(4 - RegExp.$1.length));
+                fmt = fmt.replace(RegExp.$1, (dateTimeArray[0][arr[0]] + "").substr(4 - RegExp.$1.length));
             for (var k in fmtArr)
                 if (new RegExp("(" + k + ")").test(fmt))
                     fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (fmtArr[k]) : (("00" + fmtArr[k]).substr(("" + fmtArr[k]).length)));
@@ -78,14 +87,22 @@ Component({
         },
         // 子类更改
         changeDateTimeColumn(e) {
-            var arr = this.data.dateTime,
-                dateArr = this.data.dateTimeArray;
-            arr[e.detail.column] = e.detail.value;
-            dateArr[2] = dateTimePicker.getMonthDay(dateArr[0][arr[0]], dateArr[1][arr[1]]);
+            var dateTime = this.data.dateTime,
+                dateTimeArray = this.data.dateTimeArray;
+            dateTime[e.detail.column] = e.detail.value;
+            var crtTime = new Date();
+            let year = crtTime.getFullYear();
+            let mon = String(dateTimeArray[0][dateTime[0]]);
+            let fmt = this.data.fmt;
+            if (/(y+)/.test(fmt)) {
+                year = String(dateTimeArray[0][dateTime[0]]);
+                mon = String(dateTimeArray[1][dateTime[1]]);
+            }
+            dateTimeArray[this.data.monIndex] = dateTimePicker.getMonthDay(year, mon);
+            console.log(dateTimeArray)
             this.triggerEvent('change', e.detail);
             this.setData({
-                dateTimeArray:dateArr,
-                dateTime1:arr,
+                dateTimeArray: dateTimeArray,
             })
         }
     }
