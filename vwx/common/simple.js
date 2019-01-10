@@ -156,6 +156,32 @@ const RS = _url => {
         R(_object);
     });
 }
+//发起网络请求，返回promise 对象
+const RSG = (_url, josn) => {
+    return new Promise(function(resolve, reject) {
+        let _object = {
+            url: _url,
+            method: "GET",
+            data: {},
+            success: res => {
+                if (res.status == 1) {
+                    resolve(res);
+                } else {
+                    resolve(res);
+                    //  reject(res);
+                }
+            },
+            fail: r => {
+                reject(r);
+            }
+        };
+        if (typeof(_url) == "object") {
+            if (_url['data']) _url['data'] = Object.assign(_object.data, _url['data']);
+            Object.assign(_object, _url);
+        }
+        R(_object, josn);
+    });
+}
 //发起支付请求
 const P = _obj => {
     wx.requestPayment(_obj);
@@ -342,5 +368,6 @@ module.exports = {
     getParentPage,
     promiseReject,
     selectComponent,
-    ...modal
+    ...modal,
+    RSG,
 }
