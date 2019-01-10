@@ -311,7 +311,23 @@ function rexFn(str) {
     console.log(falgArr)
     return falgArr;
 }
-
+// 支付的封装
+function payFn(data, fn, fn2) {
+    var payT = data;
+    wx.requestPayment({
+        'timeStamp': payT.timeStamp,
+        'nonceStr': payT.nonceStr,
+        'package': payT.package,
+        'signType': 'MD5',
+        'paySign': payT.paySign,
+        'success' (res) {
+            fn(res)
+        },
+        'fail' (res) {
+            fn2(res)
+        }
+    })
+}
 module.exports = {
     formatTime,
     dayTime,
@@ -330,5 +346,6 @@ module.exports = {
     upImgAll,
     upImgAllSuccss,
     rexFn,
-    dataType
+    dataType,
+    payFn
 }
