@@ -13,10 +13,8 @@ function getLoopArray(start, end, name) {
 }
 
 function getMonthDay(year, month) {
-
     let years = year.replace(/['年']/g, "");
     let months = month.replace(/['月']/g, "");
-    console.log(years, months)
     var flag = Number(years) % 400 == 0 || (Number(years) % 4 == 0 && Number(years) % 100 != 0),
         array = null;
 
@@ -75,8 +73,7 @@ function dateTimePicker(startYear, endYear, date) {
     var defaultDate = date ? [...date.split(' ')[0].split('-') + '年', ...date.split(' ')[1].split(':') + '月'] : getNewDateArry();
     // 处理联动列表数据
     /*年月日 时分秒*/
-    console.log(defaultDate)
-    dateTimeArray[0] = getLoopArray(start, end);
+    dateTimeArray[0] = getLoopArray(start, end, '年');
     dateTimeArray[1] = getLoopArray(1, 12, '月');
     dateTimeArray[2] = getMonthDay(defaultDate[0], defaultDate[1]);
     dateTimeArray[3] = getLoopArray(0, 23, '时');
@@ -86,7 +83,6 @@ function dateTimePicker(startYear, endYear, date) {
     dateTimeArray.forEach((current, index) => {
         dateTime.push(current.indexOf(defaultDate[index]));
     });
-    console.log(dateTime)
     return {
         dateTimeArray: dateTimeArray,
         dateTime: dateTime

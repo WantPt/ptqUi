@@ -72,18 +72,15 @@ Component({
             let fmt = this.data.fmt;
             var fmtArr = this.data.fmtArr;
             let count = /(y+)/.test(fmt) ? 0 : -1;
-            console.log(fmtArr)
             for (let i in fmtArr) {
                 count++;
-                fmtArr[i] = dateTimeArray[count][arr[count]].replace(/['年' | '月' | '日' | '时' | '分' | '秒']/, "");
-                console.log(fmtArr[i])
+                fmtArr[i] = dateTimeArray[count][arr[count]].replace(/['月' | '日' | '时' | '分' | '秒']/, "");
             }
             if (/(y+)/.test(fmt))
-                fmt = fmt.replace(RegExp.$1, (dateTimeArray[0][arr[0]] + "").substr(4 - RegExp.$1.length));
+                fmt = fmt.replace(RegExp.$1, (dateTimeArray[0][arr[0]] + "").substr(4 - RegExp.$1.length)).replace(/['年']/, "");
             for (var k in fmtArr)
                 if (new RegExp("(" + k + ")").test(fmt))
                     fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (fmtArr[k]) : (("00" + fmtArr[k]).substr(("" + fmtArr[k]).length)));
-            console.log(fmt)
             this.triggerEvent('confirm', fmt);
         },
         // 子类更改
@@ -91,7 +88,6 @@ Component({
             var dateTime = this.data.dateTime,
                 dateTimeArray = this.data.dateTimeArray;
             dateTime[e.detail.column] = e.detail.value;
-            console.log(e.detail)
             var crtTime = new Date();
             let year = crtTime.getFullYear();
             let mon = String(dateTimeArray[0][dateTime[0]]);
@@ -100,7 +96,6 @@ Component({
                 year = String(dateTimeArray[0][dateTime[0]]);
                 mon = String(dateTimeArray[1][dateTime[1]]);
             }
-            console.log([dateTime[0]])
             dateTimeArray[this.data.monIndex] = dateTimePicker.getMonthDay(String(year), mon);
             this.triggerEvent('change', e.detail);
             this.setData({
